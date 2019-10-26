@@ -1,0 +1,2 @@
+<?php
+Connection::init();

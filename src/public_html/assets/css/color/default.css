@@ -1,0 +1,22 @@
+/**
+ * HyperGaming - Gaming CSS Framework
+ * NOTE: Chromium 73.0.3683.86 for Arch Linux 64 bits
+ * @author Gabriel Lopes Ferreira Ramos <gabrielramos149@gmail.com>
+ * @link https://hiperesp.github.io/
+ * @license UNDEFINED
+ */
+
+:root {
+    --font-family: Lato, sans-serif;
+    --txt-color-body: #ffffffff;
+    --txt-color-header-label: #ffffff80;
+    --bg-body: #080325ff;
+    --bg-transparent: #08032564;
+    --bg-transparent-2: #080325cc;
+    --bg-image-filter: #160962ff;
+    --custom-elem-color: #d92b4cff;
+    --custom-elem-color-transparent: #d92b4c64;
+    --custom-elem-color-transparent-2: #d92b4ccc;
+    --transparent: #00000000;
+    --white-transparent: #ffffff32;
+}

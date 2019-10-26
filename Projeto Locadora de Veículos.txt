@@ -1,0 +1,48 @@
+Projeto Locadora de Veículos
+
+Mínimo: Dupla
+Máximo: Trio
+
+Páginas sem login:
+Home, Sobre nós, Veículos, Contato
+
+tbCliente:
+idCliente	PK
+nomeCliente
+cpfCliente
+cnhCliente
+endCliente
+numCliente
+complCliente
+bairroCliente
+cidadeCliente
+cepCliente
+ufCliente
+
+tbLocacao:
+idLocacao	PK
+idCliente	FK
+idVeiculo	FK
+dtInicial
+dtFinal
+valorTotal
+idUsuario	FK
+
+tbUsuario:
+idUsuario	PK
+nomeUsuario
+loginUsuario
+senhaUsuario
+
+tbVeiculo:
+idVeiculo	PK
+anoVeiculo
+idMarca		FK
+corVeiculo
+modeloVeiculo
+valorDiariaVeiculo
+fotoVeiculo
+
+tbMarca:
+idMarca		PK
+nomeMarca
