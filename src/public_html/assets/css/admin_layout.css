@@ -1,0 +1,143 @@
+header {
+        line-height: 50vh;
+        text-align: center;
+}
+header .container {
+        text-align: initial;
+        margin: 0 auto;
+        max-width: 720px;
+        padding: 20px;
+        display: inline-block;
+        line-height: normal;
+        vertical-align: middle;
+}
+header .version {
+        text-align: right;
+        color: #aaaaaa;
+}
+main {
+        max-width: 720px;
+        padding: 20px;
+        margin: 0 auto;
+}
+hr {
+        height: 1px;
+        border-style: none;
+        background-color: #0080ff40;
+}
+label {
+        display: block;
+        width: 100%;
+        color: #404040;
+}
+input {
+        width: calc(100% - 20px);
+        padding: 0 10px;
+        height: 30px;
+        border-width: 2px;
+}
+select {
+        width: calc(100% + 4px);
+        padding: 0 10px;
+        height: 34px;
+}
+input[type=submit], input[type=button] {
+        display: block;
+        font-weight: bold;
+        background-color: #0080ff;
+        height: 40px;
+        color: #ffffff;
+        border-style: none;
+        border-radius: 8px;
+        width: fit-content;
+        padding: 0 20px;
+        margin: 0 auto;
+        cursor: pointer;
+}
+input[type=submit], input[type=button]:hover {
+        background-color: #0060c0;
+}
+input[type=submit], input[type=button]:active {
+        background-color: #00a0ff;
+}
+a {
+        text-decoration: none;
+        cursor: default;
+}
+.alert-container {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        padding: 10px 0 0 10px;
+}
+.alert {
+        background-color: #ff0000;
+        box-shadow: 0 0 2em #ff0000;
+        cursor: pointer;
+        border-radius: 8px;
+        color: #ffffff;
+        padding: 20px;
+        width: fit-content;
+        margin: 10px;
+        white-space: pre;
+}
+.alert.success {
+        background-color: #00ff00;
+        box-shadow: 0 0 2em #00ff00;
+}
+.alert h1, .alert h2, .alert h3, .alert p {
+        margin: 0 5px;
+}
+.alert hr {
+        background-color: #ffffff40;
+}
+.alert.removing {
+        opacity: 0;
+        transition: opacity 500ms;
+}
+ 
+
+input[type=submit].link-button, input[type=button].link-button {
+	margin: initial;
+	color: #0080ff;
+	background-color: transparent;
+}
+input[type=submit].link-button:hover, input[type=button].link-button:hover {
+	color: #0060c0;
+}
+input[type=submit].link-button:active, input[type=button].link-button:active {
+	color: #00a0ff;
+}
+
+input[type=submit].inline-button, input[type=button].inline-button {
+	margin: initial;
+	display: inline-block;
+}
+ul {
+        padding: 0;
+        margin: 0;
+}
+ul li {
+        list-style-type: none;
+}
+ul li:hover {
+        background: #0000000f;
+}
+.list-text {
+        float: left;
+        line-height: 40px;
+        padding: 0 0 0 20px;
+        color: #404040;
+}
+.list-options {
+        float: right;
+}
+.list-options form {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+}
+ul li .clear {
+        display: block;
+        clear: both;
+}
