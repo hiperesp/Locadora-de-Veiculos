@@ -113,6 +113,16 @@ input[type=submit].inline-button, input[type=button].inline-button {
 	margin: initial;
 	display: inline-block;
 }
+input[type=submit].selected-button, input[type=button].selected-button {
+        color: #ff0080;
+}
+input[type=submit].selected-button:hover, input[type=button].selected-button:hover {
+        color: #c00060;
+}
+input[type=submit].selected-button:active, input[type=button].selected-button:active {
+        color: #ff00a0;
+}
+
 ul {
         padding: 0;
         margin: 0;
@@ -140,4 +150,16 @@ ul li:hover {
 ul li .clear {
         display: block;
         clear: both;
+}
+.responsive-image, .responsive-image img {
+        width: 100%;
+        max-height: 240px;
+}
+.responsive-image {
+        background-position: 50% 50%;
+        background-size: cover;
+}
+.responsive-image img {
+        object-fit: contain;
+        backdrop-filter: blur(5px);
 }

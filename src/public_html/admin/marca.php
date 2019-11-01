@@ -5,16 +5,39 @@ include "views/head.php";
 ?>
 		<main class="main">
 			<hr>
+<?php
+if(!@$marca) $marca = new Marca();
+if($formType=="edit") {
+?>
+			<form action="marca.php" method="post">
+				<h2>Editar Marca</h2>
+				<input type="hidden" name="action" value="editMarca">
+				<input type="hidden" name="idMarca" value="<?php echo $marca->idMarca; ?>">
+<?php
+} else if($formType=="add") {
+?>
 			<form action="#" method="post">
 				<h2>Cadastrar Marca</h2>
 				<input type="hidden" name="action" value="addMarca">
+<?php
+}
+?>
 				<label>
 					Marca:<br>
-					<input type="text" name="txtMarca" value=""><br>
+					<input type="text" name="nomeMarca" value="<?php echo $marca->nomeMarca; ?>"><br>
 				</label><br>
 				<label>
+<?php
+if($formType=="edit") {
+?>
+					<input type="submit" value="Editar Marca"><br>
+<?php
+} else if($formType=="add") {
+?>
 					<input type="submit" value="Cadastrar Marca"><br>
-				</label><br>
+<?php
+}
+?>				</label><br>
 				<hr>
 			</form>
 			<h2>Marcas cadastradas</h2>
@@ -22,40 +45,7 @@ include "views/head.php";
 				Filtrar Marca:<br>
 				<input type="text" id="filter-marca" value=""><br>
 			</label><br>
-			<ul id="marca-list">
-				<li>
-					<div class="list-text">Marca 1</div>
-					<div class="list-options">
-						<a href="#"><input type="button" class="inline-button link-button" value="Editar"></a>
-						<a href="#"><input type="button" class="inline-button link-button" value="Excluir"></a>
-					</div>
-					<span class="clear"></span>
-				</li>
-				<li>
-					<div class="list-text">Marca 2</div>
-					<div class="list-options">
-						<a href="#"><input type="button" class="inline-button link-button" value="Editar"></a>
-						<a href="#"><input type="button" class="inline-button link-button" value="Excluir"></a>
-					</div>
-					<span class="clear"></span>
-				</li>
-				<li>
-					<div class="list-text">Marca 3</div>
-					<div class="list-options">
-						<a href="#"><input type="button" class="inline-button link-button" value="Editar"></a>
-						<a href="#"><input type="button" class="inline-button link-button" value="Excluir"></a>
-					</div>
-					<span class="clear"></span>
-				</li>
-				<li>
-					<div class="list-text">Marca 4</div>
-					<div class="list-options">
-						<a href="#"><input type="button" class="inline-button link-button" value="Editar"></a>
-						<a href="#"><input type="button" class="inline-button link-button" value="Excluir"></a>
-					</div>
-					<span class="clear"></span>
-				</li>
-			</ul>
+			<ul id="marca-list"></ul>
 			<hr>
 		</main>
 		<script>
@@ -77,7 +67,7 @@ approximateSearch(
 				{
 					let formEditar = document.createElement("form");
 					formEditar.action = "#";
-					formEditar.method = "post";
+					formEditar.method = "get";
 					{
 						let action = document.createElement("input");
 						action.type = "hidden";
@@ -127,7 +117,8 @@ approximateSearch(
 			}
 			container.appendChild(line);
 		}
-	});
+	}
+);
 		</script>
 <?php
 include "views/foot.php";

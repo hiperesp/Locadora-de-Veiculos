@@ -28,4 +28,11 @@ class Connection {
 	public static function double($number) {
 		return (double)$number;
 	}
+	public static function color($hex) {
+		return hexdec($hex);
+	}
+	public static function getHexColor($int){
+		for($hex = dechex($int);strlen($hex)<6;$hex = "0".$hex);
+		return "#".$hex;
+	}
 }
