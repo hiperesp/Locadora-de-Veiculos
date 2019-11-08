@@ -96,3 +96,7 @@ a {
         transition: opacity 500ms;
 }
  
+input[type=submit].inline-button, input[type=button].inline-button {
+        margin: initial;
+        display: inline-block;
+}
