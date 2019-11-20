@@ -50,6 +50,16 @@ class Veiculo {
 		}
 		return [];
 	}
+	public static function getAll($limit) {
+        $limit = (int)$limit;
+        if($limit<1) {
+            $stringLimit = "";
+        } else {
+            $stringLimit = "LIMIT ".$limit;
+        }
+        return Connection::query("SELECT `idVeiculo`,`idMarca`,`anoVeiculo`,`corVeiculo`,`modeloVeiculo`,`valorDiariaVeiculo`,`valorDiariaVeiculo`, `fotoVeiculo` FROM `tbVeiculo` ORDER BY `idVeiculo` ".$stringLimit.";")->fetchAll(PDO::FETCH_CLASS, "Veiculo");
+		return [];
+	}
 	public static function get($id) {
 		$veiculo_id = Connection::int($id);
 		$query = Connection::query("SELECT `idVeiculo`,`tbVeiculo`.`idMarca`,`nomeMarca`,`anoVeiculo`,`corVeiculo`,`modeloVeiculo`,`valorDiariaVeiculo`,`valorDiariaVeiculo`, `fotoVeiculo` FROM `tbVeiculo` INNER JOIN `tbMarca` ON `tbVeiculo`.`idMarca`=`tbMarca`.`idMarca` WHERE `idVeiculo` = ".$veiculo_id." LIMIT 1;");

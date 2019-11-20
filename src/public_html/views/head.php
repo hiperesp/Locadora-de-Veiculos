@@ -56,10 +56,10 @@
                 <ul class="menu menu-left">
                     <li class="menu-item">
                         <a href="javascript:void(0)">
-                            <div class="menu-item-title">Aluguel <i class="material-icons">arrow_drop_down</i></div>
+                            <div class="menu-item-title">Aluguel <!--i class="material-icons">arrow_drop_down</i--></div>
                             <div class="menu-item-subtitle">Veículos</div>
                         </a>
-                        <div class="dropdown-content">
+                        <!--div class="dropdown-content">
                             <ul class="dropdown-column">
                                 <li class="dropdown-item">
                                     <a href="#">Store Style 1</a>
@@ -82,9 +82,9 @@
                                     <a href="#">Checkout</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div-->
                     </li>
-                    <li class="menu-item">
+                    <!--li class="menu-item">
                         <a href="javascript:void(0)">
                             <div class="menu-item-title">Blog <i class="material-icons">arrow_drop_down</i></div>
                             <div class="menu-item-subtitle">News</div>
@@ -113,8 +113,8 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
-                    <li class="menu-item">
+                    </li-->
+                    <!--li class="menu-item">
                         <a href="javascript:void(0)">
                             <div class="menu-item-title">Features <i class="material-icons">arrow_drop_down</i></div>
                             <div class="menu-item-subtitle">Full list</div>
@@ -167,15 +167,15 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
+                    </li-->
                 </ul>
                 <ul class="menu menu-right">
                     <li class="menu-item menu-dropdown">
-                        <a href="javascript:void(0)">
-                            <div class="menu-item-title">Hiperesp <span class="badge-1">8</span> <i class="material-icons">arrow_drop_down</i></div>
-                            <div class="menu-item-subtitle">User</div>
+                        <a target="_blank" href="/admin">
+                            <div class="menu-item-title">Admin Panel</div>
+                            <div class="menu-item-subtitle">Log in</div>
                         </a>
-                        <div class="dropdown-content">
+                        <!--div class="dropdown-content">
                             <ul class="dropdown-column">
                                 <li class="dropdown-item">
                                     <a href="#">Activity</a>
@@ -196,29 +196,29 @@
                                     <a href="#">Documentation</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div-->
                     </li>
-                    <li class="menu-item">
+                    <!--li class="menu-item">
                         <a href="javascript:void(0)">
                             <div class="menu-item-icon only-pc"><i class="material-icons">search</i></div>
                             <div class="menu-item-title only-mobile">Search</div>
                             <div class="menu-item-subtitle only-mobile">products</div>
                         </a>
-                    </li>
-                    <li class="menu-item">
+                    </li-->
+                    <!--li class="menu-item">
                         <a href="javascript:void(0)">
                             <div class="menu-item-icon only-pc"><i class="material-icons">shopping_cart</i></div>
                             <div class="menu-item-title only-mobile">Cart</div>
                             <div class="menu-item-subtitle only-mobile">products</div>
                         </a>
-                    </li>
-                    <li class="menu-item">
+                    </li-->
+                    <!--li class="menu-item">
                         <a href="javascript:void(0)">
                             <div class="menu-item-icon only-pc"><i class="material-icons">account_circle</i></div>
                             <div class="menu-item-title only-mobile">Account</div>
                             <div class="menu-item-subtitle only-mobile">login</div>
                         </a>
-                    </li>
+                    </li-->
                 </ul>
             </nav>
             <label class="hamburger-close-label only-mobile" for="hamburger-controller"></label>

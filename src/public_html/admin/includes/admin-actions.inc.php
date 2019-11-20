@@ -1,5 +1,6 @@
 <?php
 include_once __DIR__."/../../includes/include-all.inc.php";
+include_once __DIR__."/../../includes/auth.inc.php";
 
 function uploadImage($image, $optional = false){
     if($image!==null) {
@@ -94,6 +95,42 @@ switch(@$_POST['action']) {
             ,@$_POST['ufCliente']
         ];
         break;
+    case "addUsuario":
+    case "removeUsuario":
+    case "editUsuario":
+        $usuario = new Usuario();
+        list(
+             $usuario->idUsuario
+            ,$usuario->nomeUsuario
+            ,$usuario->loginUsuario
+            ,$usuario->senhaUsuario
+        ) = [
+             @$_POST['idUsuario']
+            ,@$_POST['nomeUsuario']
+            ,@$_POST['loginUsuario']
+            ,@$_POST['senhaUsuario']
+        ];
+        break;
+    case "addLocacao":
+        $locacao = new Locacao();
+        list(
+             $locacao->idLocacao
+            ,$locacao->idCliente
+            ,$locacao->idVeiculo
+            ,$locacao->idUsuario
+            ,$locacao->dtInicial
+            ,$locacao->dtFinal
+            ,$locacao->valorTotal
+        ) = [
+             @$_POST['idLocacao']
+            ,@$_POST['idCliente']
+            ,@$_POST['idVeiculo']
+            ,@$_POST['idUsuario']
+            ,@$_POST['dtInicial']
+            ,@$_POST['dtFinal']
+            ,@$_POST['valorTotal']
+        ];
+        break;
 }
 switch(@$_POST['action']) {
     case "addMarca":
@@ -111,6 +148,7 @@ switch(@$_POST['action']) {
         Notification::addActionNotification("Sucesso", "Sucesso ao remover marca.", $response);
         if($response===true) unset($marca);
         break;
+        
     case "addVeiculo":
         $veiculo->fotoVeiculo = uploadImage($veiculo->fotoVeiculo);
         if($veiculo->fotoVeiculo!==false) {
@@ -132,6 +170,7 @@ switch(@$_POST['action']) {
         Notification::addActionNotification("Sucesso", "Sucesso ao remover veículo.", $response);
         if($response===true) unset($veiculo);
         break;
+        
     case "addCliente":
         $response = $cliente->cadastrar();
         Notification::addActionNotification("Sucesso", "Sucesso ao cadastrar cliente.", $response);
@@ -147,6 +186,34 @@ switch(@$_POST['action']) {
         Notification::addActionNotification("Sucesso", "Sucesso ao remover cliente.", $response);
         if($response===true) unset($cliente);
         break;
+        
+    case "addUsuario":
+        $response = $usuario->cadastrar();
+        Notification::addActionNotification("Sucesso", "Sucesso ao cadastrar funcionário.", $response);
+        if($response===true) unset($usuario);
+        break;
+    case "editUsuario":
+        $response = $usuario->edit();
+        Notification::addActionNotification("Sucesso", "Sucesso ao editar funcionário.", $response);
+        if($response===true) unset($usuario);
+        break;
+    case "removeUsuario":
+        $response = $usuario->remove();
+        Notification::addActionNotification("Sucesso", "Sucesso ao remover funcionário.", $response);
+        if($response===true) unset($usuario);
+        break;
+
+    case "addLocacao":
+        $response = $locacao->cadastrar();
+        Notification::addActionNotification("Sucesso", "Sucesso ao cadastrar locação.", $response);
+        if($response===true) unset($locacao);
+        break;
+    case "removeLocacao":
+        $response = $locacao->remove();
+        Notification::addActionNotification("Sucesso", "Sucesso ao remover locação.", $response);
+        if($response===true) unset($locacao);
+        break;
+        
 }
 
 $formType = "add";
@@ -173,6 +240,14 @@ switch(@$_GET['action']) {
         $cliente = Cliente::get(@$_GET['idCliente']);
         if(!$cliente) {
             header("Location: cliente.php");
+            die();
+        }
+        break;
+    case "editUsuario":
+        $formType = "edit";
+        $usuario = Usuario::get(@$_GET['idUsuario']);
+        if(!$usuario) {
+            header("Location: usuario.php");
             die();
         }
         break;
