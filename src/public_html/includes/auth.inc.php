@@ -43,6 +43,10 @@ if(isset($_SESSION["usuario"])) {
             Notification::addActionNotification("", "", "Não foi possível efetuar o login");
             showLoginPrompt();
             die;
+        } else if(is_string($usuarioLogado)) {
+            Notification::addActionNotification("", "", $usuarioLogado);
+            showLoginPrompt();
+            die;
         } else {
             $_SESSION["usuario"] = $usuarioLogado;
         }
